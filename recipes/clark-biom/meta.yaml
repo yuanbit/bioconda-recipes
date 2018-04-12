@@ -1,0 +1,38 @@
+package:
+  name: clark-biom
+  version: "1.0.0"
+
+source:
+  fn: clark-biom-1.0.0.tar.gz
+  url: https://files.pythonhosted.org/packages/5c/9d/1c2d67c632b3e58921e300066c874cad32434abd1399900d185d5e07eaf5/clark-biom-1.0.0.tar.gz
+  sha256: 0402ffceabd34da0b9c47999e0c85bdb08af4548350dfaed2724d6437bd2a5c0
+
+build:
+  entry_points:
+    - clark-biom = clark_biom:main
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - biom-format >=2.1.5
+    - h5py >= 2.5.0
+
+  run:
+    - python
+    - biom-format >=2.1.5
+    - h5py >= 2.5.0
+
+test:
+  # Python imports
+  # imports:
+
+  commands:
+    - clark-biom --version
+
+about:
+  home: https://github.com/smdabdoub/clark-biom
+  license: MIT License
+  summary: 'Create BIOM-format tables from CLARK output.'
+  license_family: MIT
+
