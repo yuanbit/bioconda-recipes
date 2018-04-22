@@ -1,0 +1,50 @@
+{% set name = "PEhaplo" %}
+{% set version = "v0.1-dev04" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/broadinstitute/PEHaplo/archive/{{ version }}.tar.gz
+  sha256: 6ef9bb6c479f670729c4a2925a562fcd2a634f90306115d444506d2bf45ad7b9
+
+build:
+  number: 0
+  skip: True  # [not linux]
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+    - numpy
+    - scipy
+    - pygraphviz
+    - apsp
+    - karect
+    - networkx
+    - genometools-genometools
+    - sga
+    - samtools
+    - bowtie2
+
+test:
+  commands:
+    - pehaplo.py --help
+
+about:
+  home: https://github.com/chjiao/PEHaplo
+  license: GPLv2
+  license_family: GPL
+  summary: |
+    Quasispecies assembler that uses paired-read information
+  dev_url: https://github.com/chjiao/PEHaplo
+
+extra:
+  recipe-maintainers:
+    - notestaff
+  identifiers:
+    - doi:10.1093/bioinformatics/bty202
