@@ -22,7 +22,7 @@ requirements:
     - pygraphviz
     - apsp
     - karect
-    - networkx
+    - networkx 1.11
     - genometools-genometools
     - sga
     - samtools
