@@ -1,5 +1,5 @@
 {% set name = "PEhaplo" %}
-{% set version = "v0.1_dev04" %}
+{% set version = "v0.1_dev05" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/broadinstitute/PEHaplo/archive/{{ version }}.tar.gz
-  sha256: 8aefd0cec8fd8999d865d4521205509e63ef17e2b6745f53a9d1d1d0feb895d3
+  sha256: bcef3a99eb0568571dc63a69fbfff14c27539a2b2bcbe482bdefa3dbc2b10ece
 
 build:
   number: 0
