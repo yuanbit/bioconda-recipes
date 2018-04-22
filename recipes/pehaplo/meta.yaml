@@ -15,9 +15,6 @@ build:
   skip: True  # [not linux]
 
 requirements:
-  build:
-    - python
-
   run:
     - python
     - numpy
