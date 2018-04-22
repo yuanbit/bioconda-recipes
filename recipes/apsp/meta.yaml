@@ -1,0 +1,40 @@
+{% set version = "V0" %}
+
+package:
+  name: apsp
+  version: {{ version }}
+
+source:
+  fn: {{ version }}.tar.gz
+  url: https://github.com/chjiao/Apsp/archive/{{ version }}.tar.gz
+  sha256: 04f20c7fdacb152b062cf520763e46a9aabf0b10c1412a506fd527b84564404b
+
+build:
+  number: 0
+  skip: True  # [not linux]
+  script: "make && cp Apsp gen converter ${PREFIX}/bin/"
+
+requirements:
+  build:
+    - gcc >=4.8.2
+    - openmp
+
+  run:
+    - openmp
+    - libgcc
+
+test:
+  commands:
+    - Apsp
+
+about:
+  home: https://github.com/chjiao/Apsp
+  license: GPLv2
+  license_family: GPL
+  summary: |
+    String Overlap Finder
+  dev_url: https://github.com/chjiao/Apsp
+
+extra:
+  recipe-maintainers:
+    - notestaff
