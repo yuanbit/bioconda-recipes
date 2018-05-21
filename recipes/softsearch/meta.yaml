@@ -1,0 +1,15 @@
+{% set version = "2.4" %}
+{% set name = "Softsearch" %}
+
+package:
+        name: '{{ name }}'
+        version: '{{ version }}'
+source:
+        fn: '{{ name }}{{ version }}.tar.gz'
+        url:
+                - 'https://s3-us-west-2.amazonaws.com/mayo-bic-tools/softsearch/{{ name }}{{ version }}.tar.gz'
+requirements:
+        build:
+                - perl
+        run:
+                - perl 
