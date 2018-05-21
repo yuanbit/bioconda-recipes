@@ -12,4 +12,12 @@ requirements:
         build:
                 - perl
         run:
-                - perl 
+                - perl
+test:
+        files:
+                - Check_integration.sh
+about:
+        home: https://s3-us-west-2.amazonaws.com/mayo-bic-tools/softsearch/
+        license: Creative Commons Attribution License
+        license_file: https://i.creativecommons.org/l/by/4.0/88x31.png
+        summary: structural variance detection tool 
