@@ -1,13 +1,14 @@
 {% set version = "2.4" %}
-{% set name = "Softsearch" %}
+{% set url_name = "Softsearch" %}
+{% set name = "softsearch" %}
 
 package:
         name: '{{ name }}'
         version: '{{ version }}'
 source:
-        fn: '{{ name }}{{ version }}.tar.gz'
+        fn: '{{ url_name }}{{ version }}.tar.gz'
         url:
-                - 'https://s3-us-west-2.amazonaws.com/mayo-bic-tools/softsearch/{{ name }}{{ version }}.tar.gz'
+                - 'https://s3-us-west-2.amazonaws.com/mayo-bic-tools/softsearch/{{ url_name }}{{ version }}.tar.gz'
         sha256: 3dfc1d1d003fbeb8102d26cff225dca22d935d6cc021abc4ce99cea859ad0f0b
 requirements:
         build:
