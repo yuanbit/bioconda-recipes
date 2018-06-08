@@ -18,7 +18,7 @@ requirements:
     - openjdk
     - trimmomatic
     - samtools
-    - jellyfish
+    - jellyfish 2.2.3
     - htslib {{ CONDA_HTSLIB }}*
     - collectl
     - fastool
