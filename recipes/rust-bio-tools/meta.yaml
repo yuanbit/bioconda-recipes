@@ -5,7 +5,7 @@ package:
   version: {{version}}
 
 build:
-  number: 0
+  number: 2
   # TODO wait for CB3 gcc, then try again.
   skip: true  # [osx]
 
@@ -17,7 +17,7 @@ source:
 requirements:
   build:
     - rust
-    - gcc <4.8.5
+    - gcc
     - zlib {{ CONDA_ZLIB }}*
   run:
     - zlib {{ CONDA_ZLIB }}*
