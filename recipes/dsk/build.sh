@@ -11,7 +11,7 @@ mkdir build
 cd build
 cmake .. \
       -DEXTRALIBS_INC=$PREFIX/include \
-      -DEXTRALIBS_PATH =$PREFIX/include \
+      -DEXTRALIBS_PATH=$PREFIX/include \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DCMAKE_PREFIX_PATH=${PREFIX} \
       -DCPPUNIT_INCLUDE_DIR=${PREFIX}/include
