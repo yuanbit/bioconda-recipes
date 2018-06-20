@@ -10,7 +10,8 @@ export C_INCLUDE_PATH=${PREFIX}/include
 mkdir build
 cd build
 cmake .. \
-      -DZLIB_DIR=$PREFIX/include \
+      -DEXTRALIBS_INC=$PREFIX/include \
+      -DEXTRALIBS_PATH =$PREFIX/include \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DCMAKE_PREFIX_PATH=${PREFIX} \
       -DCPPUNIT_INCLUDE_DIR=${PREFIX}/include
