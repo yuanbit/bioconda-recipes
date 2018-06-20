@@ -1,15 +1,15 @@
 package:
   name: dsk
-  version: "2.2.0"
+  version: "2.3.0"
 
 source:
-  url: https://github.com/GATB/dsk/releases/download/v2.2.0/dsk-v2.2.0-Source.tar.gz
-  md5: dbdfe583b45e78f965e6f78cf2c9628c
+  url: https://github.com/GATB/dsk/releases/download/v2.3.0/dsk-v2.3.0-Source.tar.gz
+  md5: 67e72715284ac4195e9f66ce5f78c187
   patches:
     - install_paths.patch
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:

@@ -1,20 +1,24 @@
---- CMakeLists.txt.org	2017-04-17 17:00:03.000000000 -0500
-+++ CMakeLists.txt	2017-04-17 17:11:53.000000000 -0500
-@@ -118,9 +118,9 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index db409d0..5f7c655 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -118,9 +118,9 @@ SET (CPACK_SOURCE_IGNORE_FILES
  
  # We copy some files to the binary archive
  INSTALL (TARGETS ${PROJECT_NAME} DESTINATION bin)
 -INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/test/" DESTINATION test)
--INSTALL (FILES scripts/simple_test.sh DESTINATION test)
--INSTALL (FILES LICENSE README.md scripts/simple_test.sh DESTINATION bin/..)
+-INSTALL (FILES scripts/simple_test.sh DESTINATION test/)
+-INSTALL (FILES LICENSE README.md DESTINATION bin/..)
 +INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/test/" DESTINATION $ENV{SHARE_DIR}/test)
 +INSTALL (FILES scripts/simple_test.sh DESTINATION $ENV{SHARE_DIR}/test)
 +INSTALL (FILES LICENSE README.md DESTINATION $ENV{SHARE_DIR})
  
  # We include the "bin" tag into binary archive file name
  set (CPACK_PACKAGE_FILE_NAME  ${PROJECT_NAME}-${CPACK_PACKAGE_VERSION}-bin-${CMAKE_SYSTEM_NAME})
---- scripts/simple_test.sh	2016-03-25 05:24:51.000000000 -0500
-+++ scripts/simple_test.sh.new	2017-04-17 17:22:50.000000000 -0500
+diff --git a/scripts/simple_test.sh b/scripts/simple_test.sh
+index 4ecf1d7..d82f0c4 100755
+--- a/scripts/simple_test.sh
++++ b/scripts/simple_test.sh
 @@ -3,10 +3,10 @@
  
  # look for dsk binary. In devel mode, it's in ../build/bin directory.
@@ -29,3 +33,10 @@
  elif [ -f "../build/bin/dsk" ]
  then
   bindir="../build/bin"
+diff --git a/thirdparty/gatb-core b/thirdparty/gatb-core
+index 862ffc9..d123a6e 160000
+--- a/thirdparty/gatb-core
++++ b/thirdparty/gatb-core
+@@ -1 +1 @@
+-Subproject commit 862ffc949bd3ff556442dc83b5af3666f58195d4
++Subproject commit d123a6e46821164d8529d93237cd5766736e5972
