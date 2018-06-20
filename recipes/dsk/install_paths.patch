@@ -33,10 +33,3 @@ index 4ecf1d7..d82f0c4 100755
  elif [ -f "../build/bin/dsk" ]
  then
   bindir="../build/bin"
-diff --git a/thirdparty/gatb-core b/thirdparty/gatb-core
-index 862ffc9..d123a6e 160000
---- a/thirdparty/gatb-core
-+++ b/thirdparty/gatb-core
-@@ -1 +1 @@
--Subproject commit 862ffc949bd3ff556442dc83b5af3666f58195d4
-+Subproject commit d123a6e46821164d8529d93237cd5766736e5972
