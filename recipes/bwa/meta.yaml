@@ -21,17 +21,6 @@ requirements:
     - zlib
     - perl
 
-test:
-  commands:
-    - bwa 2>&1 | grep "index sequences in the"
-    - which xa2multi.pl
-    - which qualfa2fq.pl
-
-about:
-  home: https://github.com/lh3/bwa
-  license: GPL3
-  summary: The BWA read mapper.
-
 extra:
   identifiers:
     - biotools:bwa

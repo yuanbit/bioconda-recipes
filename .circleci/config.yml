@@ -16,7 +16,7 @@ variables:
       command: |
         curl -s https://raw.githubusercontent.com/bioconda/bioconda-common/master/common.sh > .circleci/common.sh
         # TODO remove this temporal override before merging the PR into master
-        echo -e 'MINICONDA_VER=4.5.4\nBIOCONDA_UTILS_TAG=cb3-migration' > .circleci/common.sh
+        echo -e 'MINICONDA_VER=4.5.4\nBIOCONDA_UTILS_TAG=build-lint-only-exclude' > .circleci/common.sh
   setup: &setup
     run:
       name: Setup bioconda-utils
@@ -99,7 +99,8 @@ jobs:
           command: |
             bioconda-utils lint recipes config.yml \
             --loglevel debug --full-report \
-            --git-range master HEAD
+            --git-range master HEAD \
+            --exclude $(grep -v '^#' .circleci/lint_args_for_upload_build.txt | tail -n+2) 
 
   # build and test on linux
   test-linux:
@@ -116,7 +117,8 @@ jobs:
             bioconda-utils build recipes config.yml \
               --docker --mulled-test \
               --git-range master HEAD \
-              --lint
+              --lint \
+              $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
   # build and test on macos
   test-macos:

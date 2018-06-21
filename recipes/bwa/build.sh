@@ -1,4 +1,5 @@
 #!/bin/bash
+exit 1
 
 export C_INCLUDE_PATH=${PREFIX}/include
 export LIBRARY_PATH=${PREFIX}/lib
