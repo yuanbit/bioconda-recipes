@@ -150,7 +150,8 @@ jobs:
           command: |
             bioconda-utils build recipes config.yml \
               --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers \
-              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1
+              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1 \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
   # build, test and upload on macos
   upload-macos:
     <<: *macos
@@ -167,7 +168,8 @@ jobs:
           command: |
             bioconda-utils build recipes config.yml \
               --anaconda-upload \
-              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1
+              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1 \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
   # build, test and upload for bulk branch on linux
   bulk-linux:
@@ -183,7 +185,8 @@ jobs:
           name: Building, testing, and uploading of all unpublished recipes
           command: |
             bioconda-utils build recipes config.yml \
-              --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers
+              --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
   # build, test and upload for bulk branch on macos
   bulk-macos:
@@ -199,7 +202,8 @@ jobs:
           name: Building, testing and uploading of all unpublished recipes
           command: |
             bioconda-utils build recipes config.yml \
-              --anaconda-upload
+              --anaconda-upload \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
   # nightly build, test and upload of unpublished recipes on linux
   nightly-upload-linux:
@@ -215,7 +219,8 @@ jobs:
           name: Building, testing, and uploading of all unpublished recipes
           command: |
             bioconda-utils build recipes config.yml \
-              --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers
+              --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
   # nightly build, test and upload of unpublished recipes on macos
   nightly-upload-macos:
@@ -231,7 +236,8 @@ jobs:
           name: Building, testing and uploading of all unpublished recipes
           command: |
             bioconda-utils build recipes config.yml \
-              --anaconda-upload
+              --anaconda-upload \
+              --lint $(grep -v '^#' .circleci/lint_args_for_upload_build.txt)
 
 
 workflows:
@@ -240,7 +246,7 @@ workflows:
   bioconda-test:
     jobs:
       # Linting is now also performed just before a recipe is built with
-      # bioconda-utils build --prelint.
+      # bioconda-utils build --lint.
       - lint:
           filters:
             branches:

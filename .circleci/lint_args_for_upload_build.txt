@@ -1,0 +1,22 @@
+--lint-exclude
+# in_other_channels
+already_in_bioconda
+missing_tests
+missing_home
+missing_license
+missing_summary
+missing_hash
+uses_git_url
+# uses_javajdk
+# uses_perl_threaded
+uses_setuptools
+has_windows_bat_file
+# should_be_noarch
+# should_not_be_noarch
+setup_py_install_args
+invalid_identifiers
+# deprecated_numpy_spec
+should_not_use_fn
+# should_use_compilers
+# compilers_must_be_in_build
+# bioconductor_37
