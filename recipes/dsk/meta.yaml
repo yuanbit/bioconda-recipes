@@ -15,9 +15,10 @@ requirements:
   build:
     - cmake
     - {{ compiler('c') }}
-    - zlib
     - cppunit
-
+  host:
+    - zlib
+    
   run:
     - zlib
 
