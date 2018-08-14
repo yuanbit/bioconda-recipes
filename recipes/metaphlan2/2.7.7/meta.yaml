@@ -32,7 +32,7 @@ requirements:
     - biopython
     - pandas
     - pysam
-    - matplotlib
+    - matplotlib <2.0.0
     - scipy
     - requests
     - blast >=2.6.0
